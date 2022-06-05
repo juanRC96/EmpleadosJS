@@ -1,15 +1,13 @@
 class Empleado{
-    constructor(idEmp,nombre,apellido,idPue){
-        this.idEmp = idEmp;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.idPue = idPue;
+    static contadorEmpleados = 0;
+    constructor(nombre,apellido,idPue){
+        this._idEmp = Empleado.contadorEmpleados++;
+        this._nombre = nombre;
+        this._apellido = apellido;
+        this._idPue = idPue;
     }
     get idEmp(){
         return this._idEmp;
-    }
-    set idEmp(idEmp){
-        this._idEmp=idEmp;
     }
     get nombre(){
         return this._nombre;
