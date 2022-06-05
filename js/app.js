@@ -23,7 +23,7 @@ let mostrarPuestos = () =>{
     document.getElementById("pue").innerHTML = selec;
 }
 
-function cargarEmpleados(){
+let cargarEmpleados = () =>{
     let tabla = "<tr><th>ID Empleado</th><th>Nombre</th><th>Apellido</th><th>Puesto</th><th>Salario</th></tr>";
     for(let empleado of empleados){
         tabla += `<tr><th>${empleado._idEmp}</th><th>${empleado._nombre}</th><th>${empleado._apellido}</th><th>${obtenerDenomPuesto(empleado._idPue)}</th><th>$${(obtenerSueldo(empleado._idPue)).toLocaleString()}</th></tr>`;
@@ -31,7 +31,7 @@ function cargarEmpleados(){
     document.getElementById("empleados").innerHTML = tabla;
 }
 
-function cargarPuestos(){
+let cargarPuestos = () =>{
     let tabla = "<tr><th>ID Puesto</th><th>Denominacion</th><th>Salario</th></tr>";
     for(let puesto of puestos){
         tabla += `<tr><th>${puesto._idPue}</th><th>${puesto._denominacion}</th><th>$${(puesto._salario).toLocaleString()}</th></tr>`;
@@ -39,17 +39,17 @@ function cargarPuestos(){
     document.getElementById("puestos").innerHTML = tabla;
 }
 
-function obtenerSueldo(id){
+let obtenerSueldo = (id) =>{
     let obj = puestos.find(p => p._idPue == id);
     return obj._salario;
 }
 
-function obtenerDenomPuesto(id){
+let obtenerDenomPuesto = (id) =>{
     let obj = puestos.find(p => p._idPue == id);
     return obj._denominacion;
 }
 
-function agregarEmpleados(){
+let agregarEmpleados = () =>{
     let formulario = document.forms["agregarEmp"];
     nuevoEmp = new Empleado;
     nuevoEmp._nombre = formulario["nom"].value;
@@ -59,7 +59,7 @@ function agregarEmpleados(){
     carga();
 }
 
-function agregarPuestos(){
+let agregarPuestos = () =>{
     let formulario = document.forms["agregarPue"];
     nuevoPue = new Puesto;
     nuevoPue._denominacion = formulario["den"].value;
