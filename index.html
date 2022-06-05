@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="carga()">
+    <header>
+        <h1>Empleados</h1>
+    </header>
+    <main>
+        <div id="formulario">
+            <h3>Cargar empleado</h3>
+            <form id="agregarEmp" onsubmit="return false">
+                Nombre <input id="nom">
+                Apellido <input id="ape">
+                Puesto <select id="pue"></select>
+                <button type="submit" onclick="agregarEmpleados()">Agregar</button>
+            </form>
+            <h3>Cargar puesto</h3>
+            <form id="agregarPue" onsubmit="return false">
+                Denominacion <input id="den">
+                Salario <input id="sal">
+                <button type="submit" onclick="agregarPuestos()">Agregar</button>
+            </form>
+        </div>
+        <div id="tablas">
+            <table id="empleados"></table>
+            <table id="puestos"></table>
+        </div>
+    </main>
+
+    <script src="js/Puesto.js"></script>
+    <script src="js/Empleado.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
