@@ -1,14 +1,12 @@
 class Puesto{
-    constructor(idPue,denominacion,salario){
-        this.idPue = idPue;
-        this.denominacion = denominacion;
-        this.salario = salario;
+    static contadorPuestos = 0;
+    constructor(denominacion,salario){
+        this._idPue = Puesto.contadorPuestos++;
+        this._denominacion = denominacion;
+        this._salario = salario;
     }
     get idPue(){
         return this._idPue;
-    }
-    set idPue(idPue){
-        this._idPue=idPue;
     }
     get denominacion(){
         return this._denominacion;
